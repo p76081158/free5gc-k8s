@@ -28,5 +28,9 @@ VOLUME [ "/free5gc/config" ]
 # Certificates (if not using default) volume
 VOLUME [ "/free5gc/support/TLS" ]
 
+# Default command
+ENTRYPOINT [ "./udm" ]
+CMD [ "-udmcfg", "../config/udmcfg.yaml" ]
+
 # Exposed ports
 EXPOSE 8000

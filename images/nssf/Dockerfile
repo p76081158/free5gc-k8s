@@ -28,5 +28,9 @@ VOLUME [ "/free5gc/config" ]
 # Certificates (if not using default) volume
 VOLUME [ "/free5gc/support/TLS" ]
 
+# Default command
+ENTRYPOINT [ "./nssf" ]
+CMD [ "-nssfcfg", "../config/nssfcfg.yaml" ]
+
 # Exposed ports
 EXPOSE 8000

@@ -28,5 +28,8 @@ WORKDIR /free5gc/${F5GC_MODULE}
 # Config files volume
 VOLUME [ "/free5gc/config" ]
 
+# Default command
+CMD [ "sh", "-c", "./n3iwf-ipsec.sh && ./n3iwf -n3iwfcfg ../config/n3iwfcfg.yaml" ]
+
 # Certificates (if not using default) volume
 VOLUME [ "/free5gc/support/TLS" ]

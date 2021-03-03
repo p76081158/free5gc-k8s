@@ -28,5 +28,10 @@ VOLUME [ "/free5gc/config" ]
 # Certificates (if not using default) volume
 VOLUME [ "/free5gc/support/TLS" ]
 
+# Default command
+ENTRYPOINT [ "./amf" ]
+CMD [ "-amfcfg", "../config/amfcfg.yaml" ]
+
 # Exposed ports
 EXPOSE 8000
+EXPOSE 38412/sctp

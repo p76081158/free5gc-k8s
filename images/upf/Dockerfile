@@ -32,3 +32,11 @@ WORKDIR /free5gc/${F5GC_MODULE}
 
 # Update links
 RUN ldconfig
+
+# Default commnad
+ENTRYPOINT ["./free5gc-upfd" ]
+CMD [ "-f", "../config/upfcfg.yaml" ]
+
+# Exposed ports
+EXPOSE 8805
+

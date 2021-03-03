@@ -28,5 +28,9 @@ VOLUME [ "/free5gc/config" ]
 # Certificates (if not using default) volume
 VOLUME [ "/free5gc/support/TLS" ]
 
+# Default command
+ENTRYPOINT [ "./ausf" ]
+CMD [ "-ausfcfg", "../config/ausfcfg.yaml" ]
+
 # Exposed ports
 EXPOSE 8000
