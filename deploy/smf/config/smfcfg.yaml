@@ -54,7 +54,7 @@ configuration:
         interfaces:
           - interfaceType: N3
             endpoints:
-              - 10.200.200.101
+              - 192.188.2.101
             networkInstance: internet
           - interfaceType: N9
             endpoints:
@@ -72,7 +72,7 @@ configuration:
         interfaces:
           - interfaceType: N3
             endpoints:
-              - 10.200.200.102
+              - 192.188.2.102
             networkInstance: internet2
           - interfaceType: N9
             endpoints:
