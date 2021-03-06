@@ -1,0 +1,17 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: free5gc
+resources:
+  - upf-2-sa.yaml
+  - upf-2-rbac.yaml
+  - upf-2-multus.yaml
+  - upf-2-service.yaml
+  - upf-2-deployment.yaml
+
+# declare ConfigMap from a ConfigMapGenerator
+configMapGenerator:
+- name: free5gc-upf-2-config
+  namespace: free5gc
+  files:
+    - upfcfg.yaml=config/upfcfg2.yaml
