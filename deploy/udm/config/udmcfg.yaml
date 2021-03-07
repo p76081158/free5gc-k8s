@@ -19,7 +19,7 @@ configuration:
       pem: free5gc/support/TLS/udm.pem # UDM TLS Certificate
       key: free5gc/support/TLS/udm.key # UDM TLS Private key
   nrfUri: http://free5gc-nrf:8000 # a valid URI of NRF
-
+  
   # test data set from TS33501-f60 Annex C.4
   keys:
     udmProfileAHNPublicKey: 5a8d38864820197c3394b92613b20b91633cbd897119273bf8e4a6f4eec0a650
