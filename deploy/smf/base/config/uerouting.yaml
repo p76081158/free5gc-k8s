@@ -4,7 +4,7 @@ info:
 
 ueRoutingInfo: # the list of UE routing information
   - SUPI: imsi-2089300007487 # Subscription Permanent Identifier of the UE
-    AN: 10.200.200.101 # the IP address of RAN
+    AN: 192.168.72.3 # the IP address of RAN (gNB)
     PathList: # the pre-config paths for this SUPI
       - DestinationIP: 60.60.0.100 # the destination IP address on Data Network (DN)
         # the order of UPF nodes in this path. We use the UPF's name to represent each UPF node.

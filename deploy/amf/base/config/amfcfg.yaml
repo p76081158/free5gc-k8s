@@ -5,7 +5,7 @@ info:
 configuration:
   amfName: AMF # the name of this AMF
   ngapIpList:  # the IP list of N2 interfaces on this AMF
-    - 192.188.2.17
+    - 192.168.72.17
   sbi: # Service-based interface information
     scheme: http # the protocol for sbi (http or https)
     registerIPv4: free5gc-amf # IP used to register to NRF

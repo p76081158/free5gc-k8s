@@ -41,10 +41,10 @@ configuration:
     up_nodes:
       gNB1:
         type: AN
-        an_ip: 192.188.2.3
+        an_ip: 192.168.72.3
       AnchorUPF1:
         type: UPF
-        node_id: 10.200.200.101
+        node_id: 10.200.200.101 # the IP/FQDN of N4 interface on this UPF (PFCP)
         sNssaiUpfInfos:
           - sNssai:
               sst: 1
@@ -53,16 +53,16 @@ configuration:
               - dnn: internet
         interfaces:
           - interfaceType: N3
-            endpoints:
-              - 192.188.2.101
+            endpoints: # the IP address of this N3/N9 interface on this UPF
+              - 192.168.72.101
             networkInstance: internet
           - interfaceType: N9
-            endpoints:
+            endpoints: # the IP address of this N3/N9 interface on this UPF
               - 10.200.200.101
             networkInstance: internet
       AnchorUPF2:
         type: UPF
-        node_id: 10.200.200.102
+        node_id: 10.200.200.102 # the IP/FQDN of N4 interface on this UPF (PFCP)
         sNssaiUpfInfos:
           - sNssai:
               sst: 1
@@ -71,11 +71,11 @@ configuration:
               - dnn: internet2
         interfaces:
           - interfaceType: N3
-            endpoints:
-              - 192.188.2.102
+            endpoints: # the IP address of this N3/N9 interface on this UPF
+              - 192.168.72.102
             networkInstance: internet2
           - interfaceType: N9
-            endpoints:
+            endpoints: # the IP address of this N3/N9 interface on this UPF
               - 10.200.200.102
             networkInstance: internet2
     links:
@@ -83,6 +83,15 @@ configuration:
         B: AnchorUPF1
       - A: gNB1
         B: AnchorUPF2
+  dnn:
+    internet:
+      dns:
+        ipv4: 8.8.8.8
+        ipv6: 2001:4860:4860::8888
+    internet2:
+      dns:
+        ipv4: 8.8.4.4
+        ipv6: 2001:4860:4860::8844
   ue_subnet: 60.60.0.0/16
   nrfUri: http://free5gc-nrf:8000
   ulcl: false
