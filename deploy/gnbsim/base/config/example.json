@@ -39,7 +39,7 @@
 			"sd": "010203"
 		},
 		"dnn": "internet",
-		"url": "http://172.16.1.2:8080/"
+		"url": "http://www.google.com/"
 	},
 	"ULInfoNR": {
 		"NRCGI": {
@@ -59,5 +59,5 @@
 	},
 	"NGAPPeerAddr": "192.188.2.17",
 	"GTPuLocalAddr": "192.188.2.3",
-	"GTPuIFname": "eno1"
+	"GTPuIFname": "net1"
 }
