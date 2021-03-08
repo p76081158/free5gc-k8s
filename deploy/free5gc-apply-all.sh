@@ -7,11 +7,14 @@ while [[ $(kubectl -n free5gc get pods -l app=$1 -o 'jsonpath={..status.conditio
 kubectl apply -f free5gc-namespace.yaml && sleep 1
 cd mongodb && kubectl apply -k . && cd ..
 
+# Depends on mongodb
 checkpod free5gc-mongodb
 cd nrf     && kubectl apply -k . && cd ..
 cd upf-1   && kubectl apply -k . && cd ..
 cd upf-2   && kubectl apply -k . && cd ..
+cd webui   && kubectl apply -k . && cd ..
 
+# Depends on nrf & upf
 checkpod free5gc-nrf
 checkpod free5gc-upf-1
 checkpod free5gc-upf-2

@@ -4,6 +4,7 @@ cd mongodb && kubectl delete -k . && cd ..
 cd nrf     && kubectl delete -k . && cd ..
 cd upf-1   && kubectl delete -k . && cd ..
 cd upf-2   && kubectl delete -k . && cd ..
+cd webui   && kubectl delete -k . && cd ..
 cd amf     && kubectl delete -k . && cd ..
 cd ausf    && kubectl delete -k . && cd ..
 cd smf     && kubectl delete -k . && cd ..
