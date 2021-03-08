@@ -6,3 +6,10 @@ bases:
 patchesStrategicMerge:
 - node-affinity.yaml
 
+# declare ConfigMap from a ConfigMapGenerator
+configMapGenerator:
+- name: free5gc-gnbsim-config
+  namespace: free5gc
+  behavior: replace
+  files:
+    - config/example.json
