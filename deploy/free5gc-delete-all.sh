@@ -1,15 +1,19 @@
 #!/bin/bash
 
-cd mongodb && kubectl delete -k . && cd ..
-cd nrf     && kubectl delete -k . && cd ..
-cd upf-1   && kubectl delete -k . && cd ..
-cd upf-2   && kubectl delete -k . && cd ..
-cd webui   && kubectl delete -k . && cd ..
-cd amf     && kubectl delete -k . && cd ..
-cd ausf    && kubectl delete -k . && cd ..
-cd smf     && kubectl delete -k . && cd ..
-cd nssf    && kubectl delete -k . && cd ..
-cd pcf     && kubectl delete -k . && cd ..
-cd udm     && kubectl delete -k . && cd ..
-cd udr     && kubectl delete -k . && cd ..
+kustomizedelete () {
+cd $1 && kubectl delete -k . && cd ../../
+}
+
+cd mongodb && kustomizedelete base
+cd nrf     && kustomizedelete base
+cd upf-1   && kustomizedelete base
+cd upf-2   && kustomizedelete base
+cd webui   && kustomizedelete base
+cd amf     && kustomizedelete base
+cd ausf    && kustomizedelete base
+cd smf     && kustomizedelete base
+cd nssf    && kustomizedelete base
+cd pcf     && kustomizedelete base
+cd udm     && kustomizedelete base
+cd udr     && kustomizedelete base
 kubectl delete -f free5gc-namespace.yaml
