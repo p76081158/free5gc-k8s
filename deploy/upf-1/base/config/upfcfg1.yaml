@@ -21,7 +21,3 @@ configuration:
       cidr: 60.60.0.0/16
       # [optional] apn_list[*].natifname
       # natifname: eth0
-    - dnn: internet2
-      cidr: 10.10.0.0/16
-      # [optional] apn_list[*].natifname
-      # natifname: eth0

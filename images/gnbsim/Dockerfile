@@ -1,4 +1,4 @@
-FROM golang:1.16.0-buster AS builder
+FROM golang:1.15.2-buster AS builder
 
 LABEL github="https://github.com/hhorai/gnbsim"
 
@@ -12,9 +12,10 @@ RUN apt-get update && \
 
 # Clone & Build
     cd $GOPATH/src && \
-    git clone https://github.com/hhorai/gnbsim.git && \
+    git clone https://github.com/p76081158/gnbsim.git && \
     cd gnbsim && \
-    make -j `nproc` 
+    make test && \
+    make
 
 FROM ubuntu:18.04
 

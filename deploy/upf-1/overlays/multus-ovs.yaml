@@ -1,0 +1,19 @@
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition 
+metadata:
+  name: free5gc-upf-1-n6
+spec:
+  config: '{ 
+      "cniVersion": "0.3.1",
+      "type": "ovs",
+      "bridge": "br1",
+      "ipam": {
+        "type": "static",
+        "addresses": [
+                {
+                        "address": "10.200.100.101/24"
+                }
+        ]
+      }
+    }'

@@ -5,3 +5,12 @@ bases:
 - ../base
 patchesStrategicMerge:
 - pod-affinity.yaml
+
+# declare ConfigMap from a ConfigMapGenerator
+configMapGenerator:
+- name: free5gc-smf-config
+  namespace: free5gc
+  behavior: replace
+  files:
+    - config/smfcfg.yaml
+    - config/uerouting.yaml

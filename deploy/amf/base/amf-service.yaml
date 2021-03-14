@@ -7,6 +7,7 @@ metadata:
   name: free5gc-amf
 spec:
   # type: ClusterIP
+  # type: NodePort
   clusterIP: None
   ports:
   - name: free5gc-amf
@@ -17,5 +18,6 @@ spec:
     port: 38412
     protocol: SCTP
     targetPort: 38412
+  #  nodePort: 32150
   selector:
     app: free5gc-amf

@@ -22,7 +22,8 @@ spec:
       securityContext:
         runAsUser: 0
         runAsGroup: 0
-      containers:
+      
+containers:
         - name: free5gc-upf-1
           image: black842679513/free5gc-upf:v3.0.5
           imagePullPolicy: IfNotPresent
@@ -36,8 +37,8 @@ spec:
             - name: free5gc-upf-1-config
               mountPath: /free5gc/config
               # read host linux tun/tap packets
-           # - name: tun-dev-dir
-           #   mountPath: /dev/net/tun
+            - name: tun-dev-dir
+              mountPath: /dev/net/tun
           ports:
             - containerPort: 2152
               name: if-n3
@@ -47,8 +48,6 @@ spec:
               protocol: UDP
         - name: tcpdump
           image: corfr/tcpdump
-          securityContext:
-            privileged: true
           command:
             - /bin/sleep
             - infinity
@@ -61,6 +60,6 @@ spec:
         - name: free5gc-upf-1-config
           configMap:
             name: free5gc-upf-1-config
-       # - name: tun-dev-dir
-       #   hostPath:
-       #     path: /dev/net/tun
+        - name: tun-dev-dir
+          hostPath:
+            path: /dev/net/tun
