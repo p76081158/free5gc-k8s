@@ -175,11 +175,10 @@ main.main()
     # change url in example.json ( www.google.com --> 10.200.100.30:80 )
     $ ./example
     ```
-    :::info
     * UPF and simple-web must on the same node
     * Or you can setup vxlan between OpenvSwitch on each nodes - [More detail](https://www.sidorenko.io/post/2018/11/openstack-networking-open-vswitch-and-vxlan-introduction/)
     * Otherwise, deloy another server without using ovs-cni (use flannel to communication)
-    :::
+
     
 ## Debug
 
