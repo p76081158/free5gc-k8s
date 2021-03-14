@@ -1,0 +1,11 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: free5gc
+resources:
+  - simple-web-sa.yaml
+  - simple-web-rbac.yaml
+  - simple-web-multus.yaml
+  - simple-web-service.yaml
+  - simple-web-deployment.yaml
+

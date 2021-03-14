@@ -1,0 +1,21 @@
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: free5gc-simple-web
+  name: free5gc-simple-web
+spec:
+  template:
+    spec:
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - free5gc-upf-1
+            topologyKey: "kubernetes.io/hostname"

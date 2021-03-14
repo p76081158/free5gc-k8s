@@ -1,0 +1,38 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: free5gc-simple-web
+  labels:
+    app: free5gc-simple-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: free5gc-simple-web
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: free5gc-simple-web
+      annotations:
+        k8s.v1.cni.cncf.io/networks: free5gc-simple-web-n6
+    spec:
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+      - name: tcpdump
+        image: corfr/tcpdump
+        securityContext:
+          privileged: false
+          capabilities:
+            add: ["NET_ADMIN"]
+        command:
+          - /bin/sleep
+          - infinity

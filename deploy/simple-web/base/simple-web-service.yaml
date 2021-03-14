@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: free5gc-simple-web
+  name: free5gc-simple-web
+spec:
+  type: NodePort
+  ports:
+  - name: free5gc-simple-web
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: free5gc-simple-web
