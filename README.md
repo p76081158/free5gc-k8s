@@ -65,8 +65,7 @@ net.ipv4.ip_forward=1
 ## gNB and UPF
 
 * gNB and UPF can't be deployed on the same host
-* both need higher privileges and mounted the /dev/net/tun device
-* that may cause race condition problem
+* because they both need access /dev/net/tun on the host, this will cause race condition problem
 
 ## Quickstart Installation Guide
 
