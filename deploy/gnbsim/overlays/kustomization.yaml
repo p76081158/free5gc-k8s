@@ -5,6 +5,7 @@ bases:
 - ../base
 patchesStrategicMerge:
 - node-affinity.yaml
+- macvlan.yaml
 
 # declare ConfigMap from a ConfigMapGenerator
 configMapGenerator:
