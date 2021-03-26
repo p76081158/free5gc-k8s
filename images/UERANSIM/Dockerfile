@@ -7,7 +7,7 @@ RUN apt update && \
     apt install -y software-properties-common && \
     add-apt-repository ppa:ubuntu-toolchain-r/test && \
     apt update && \
-    apt install -y gcc-9 make g++ libsctp-dev lksctp-tools iproute2 apt-transport-https ca-certificates gnupg wget git && \
+    apt install -y gcc-9 make g++ libsctp-dev lksctp-tools iproute2 apt-transport-https ca-certificates gnupg wget git iputils-ping && \
     wget -qO - https://apt.kitware.com/keys/kitware-archive-latest.asc | apt-key add - && \
     apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main' && \
     apt update && \
