@@ -1,0 +1,9 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: free5gc-upf-1-rbac
+subjects:
+- kind: ServiceAccount
+  name: nsc-acc
+  namespace: default
