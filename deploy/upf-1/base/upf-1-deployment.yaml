@@ -50,8 +50,16 @@ spec:
           securityContext:
             privileged: true
           command:
-            - /bin/sleep
-            - infinity
+            - /bin/sh
+            - -c
+            - |
+              sysctl -w net.ipv4.ip_forward=1
+              apk update
+              apk add iptables
+              iptables -t nat -A POSTROUTING -s 60.60.0.0/16 ! -o upfgtp -j MASQUERADE
+              ip r delete default
+              ip r add default dev nsm0 via 172.16.1.2
+              sleep infinity
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
